@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+    <style>
+        .your-img {
+            height: auto;
+            width: auto;
+            max-width: 350px;
+            max-height: 350px;
+        }
+
+        .btn-circle {
+            width: 130px;
+            height: 130px;
+            text-align: center;
+            padding: 53px 0;
+            font-size: 15px;
+            line-height: 1.428571429;
+            border-radius: 50%;
+        }
+
+        .btn-fontsizeHello {
+            font-size: 75px;
+            font-family: Helvetica;
+            color: #8b8b8b;
+        }
+
+        .btn-fontsize {
+            font-size: 45px;
+            font-family: Helvetica;
+            color: #8b8b8b;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="background-color:#eae5e5">
+        <div class="container">
+            <br /><br /><br />
+
+            <div class="col-md-5"><img class="img-circle your-img" src="~/Content/pp.jpg" /></div>
+            <div class="col-md-7">
+       
+                <span class="btn-fontsizeHello">Hello,</span><br />
+                <span class="btn-fontsize">a bit about me:</span><br />
+                <span class="btn btn-default btn-circle" style="background-color:#e83556"> @Html.ActionLink("Resume", "Resume", "Home", new { @style = "color:White" })</span>        
+                <span class="btn btn-default btn-circle " style="background-color:#61d0d4">  @Html.ActionLink("Projects", "Projects", "Home", new { @style = "color:White" })</span>
+                <span class="btn btn-default btn-circle " style="background-color:#d1c926">  @Html.ActionLink("Contact", "Contact", "Home", new { @style = "color:White" })</span>
+            </div><br />
+            <span></span>
+            
+        </div> 
+        <br /><br /><br /><br /><br />
+    </div>
+</body>
+</html>

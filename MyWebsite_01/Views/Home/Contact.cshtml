@@ -1,0 +1,118 @@
+﻿@using MyWebsite_01.Models.ORM.VM
+@model ContactModel
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contacts</title>
+    <style>
+        .your-img {
+            height: auto;
+            width: auto;
+            max-width: 350px;
+            max-height: 350px;
+        }
+
+        .btn-circle {
+            width: 130px;
+            height: 130px;
+            text-align: center;
+            padding: 53px 0;
+            font-size: 15px;
+            line-height: 1.428571429;
+            border-radius: 50%;
+        }
+
+        .btn-fontsizeHello {
+            font-size: 70px;
+            font-family: Helvetica;
+            color: #8b8b8b;
+        }
+
+        .btn-fontsize {
+            font-size: 15px;
+            font-family: Helvetica;
+            color: #8b8b8b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="background-color:#eae5e5">
+        <div class="container">
+            
+
+            <br /><br /><br />
+            <div class="col-md-5">
+                <span class="col-md-offset-1 btn-fontsizeHello">CONTACT</span>
+                <hr />
+                <br /><br /><br />
+                <span class="btn-fontsize"><strong>Mail</strong> arslanfatihfurkan@gmail.com <br /> <strong>Cell </strong> 05058428251</span>
+            </div>
+            
+                      <div class="container col-md-7">
+                          @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "well form-horizontal" }))
+        {
+                  
+                 
+                      <div class="form-group">
+                          <label class="col-md-4 control-label">Name</label>
+                          <div class="col-md-4 inputGroupContainer">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                  @Html.TextBoxFor(model => model.AdiSoyadi, new { @class = "form-control", placeholder = "Your Name" })
+                              </div>
+                             
+                          </div>
+                      </div>
+                      <!-- Text input-->
+                      <div class="form-group">
+                          <label class="col-md-4 control-label">Email</label>
+                          <div class="col-md-4 inputGroupContainer">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                  @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Your Email" })
+                              </div>
+                           
+                          </div>
+                      </div>
+                      <!-- Text area -->
+                      <div class="form-group">
+                          <label class="col-md-4 control-label">Message</label>
+                          <div class="col-md-4 inputGroupContainer">
+                              <div class="input-group">
+                                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                  @Html.TextAreaFor(model => model.Mesaj, new { @class = "form-control", placeholder = "Your Message" })
+
+                              </div>
+              
+                          </div>
+                      </div>
+                     
+                      <!-- Button -->
+                      <div class="form-group">
+                          <label class="col-md-4 control-label"></label>
+                          <div class="col-md-4">
+                              <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button>
+                          </div>
+                      </div>
+                 
+}
+
+
+                      </div>
+
+                  </div>
+
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <style>
+        div {
+            font-family: Helvetica;
+        }
+
+        .white {
+            color: white;
+        }
+    </style>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    @*header*@
+    <div class="container-fluid" style="background-color:#eae5e5">
+        <div class="container">
+
+            <div class="row">
+                <strong style="color:#8b8b8b"> <h1>Fatih Furkan Arslan</h1> </strong>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="col-md-5">
+                        <strong style="color:#8b8b8b">Junior Developer</strong>
+                    </div>
+
+                    <div class="col-md-7">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.ActionLink("Home", "Homepage", "Home", new { @style = "color:#8b8b8b" })
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Resume", "Resume", "Home", new { @style = "color:#8b8b8b" })
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Projects", "Projects", "Home", new { @style = "color:#8b8b8b" })
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("Contact", "Contact", "Home", new { @style = "color:#8b8b8b" })
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+
+    @*footer*@
+    <div class="container-fluid" style="background-color:#e83556">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="margin:15px 0px">
+            <table class="table table">
+                <thead>
+                    <tr>
+                        <th><span class="col-md-3 white glyphicon glyphicon-phone fa-3x "></span>
+                           <span class="col-md-9 white">Phone:<br /> 05058428251</span>
+                        </th>
+                        <th>
+                            <span class="col-md-2 white glyphicon glyphicon-envelope fa-3x " aria-hidden="true"></span> <span class="col-md-10 white">Mail: <br />arslanfatihfurkan@gmail.com</span>
+                        </th>
+                        <th>
+                            <span class="col-md-3 white glyphicon glyphicon-plus fa-3x"  aria-hidden="true"></span><span class="col-md-9 white"><br />Follow me</span>
+                        </th>
+                        <th>
+                            <span class="col-md-2 white glyphicon glyphicon-copyright-mark fa-3x" aria-hidden="true"></span><span class="col-md-10 white"><br />Tüm Hakları Saklıdır.&copy;</span>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>

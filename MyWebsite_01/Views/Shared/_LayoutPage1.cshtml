@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <style>
+        #header {
+            height: 110px;
+            background-color: #eae5e5;
+        }
+
+        #body {
+            background-color: #eae5e5;
+        }
+
+        #footer {
+            height: 100px;
+            background-color: rgba(232, 53, 80, 1);
+           
+        }
+
+        
+       #marginOrtala{
+           margin: 0 auto;
+           
+       }
+    </style>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        @*header*@
+        <div id="header">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-5">
+
+                        <strong> <h2>Fatih Furkan Arslan</h2> </strong>
+                        <br />
+                        <strong>Junior Developer</strong>
+
+                    </div>
+                    <div class="text-center">
+                        <div class="col-md-8">
+
+                            @Html.ActionLink("Home", "Homepage", "Home")
+                         
+                            @Html.ActionLink("Resume", "Resume", "Home")
+                         
+                            @Html.ActionLink("Projects Projects", "Projects", "Home")
+                            
+                            @Html.ActionLink("Contact", "Contact", "Home")
+
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+        @*body*@
+        <div>
+            @RenderBody()
+        </div>
+
+        @*footer*@
+        <div id="footer">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col col-md-3">
+
+                        <p><span class="fa fa-mobile fa-2x"></span>&nbsp;Phone: <br /> 050505050505</p>
+                    </div>
+
+                    <div class="col col-md-3">
+
+                        <p><span class="fa fa-inbox fa-2x" aria-hidden="true"></span>&nbsp;Mail: <br />arslanfatihfurkan@gmail.com </p>
+
+                    </div>
+
+                    <div class="col col-md-3">
+
+                        <p><span class="fa fa-plus fa-2x" aria-hidden="true"></span>&nbsp;Follow me</p>
+
+                    </div>
+
+                    <div class="col col-md-3">
+                        <p><span class="fa fa-inbox fa-2x" aria-hidden="true"></span>&nbsp;Tüm Hakları Saklıdır.&copy;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+
+</html>

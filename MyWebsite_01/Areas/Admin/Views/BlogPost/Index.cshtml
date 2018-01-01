@@ -1,0 +1,109 @@
+﻿@using MyWebsite_01.Areas.Admin.Models.DTO
+@model List<BlogPostVM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Areas/Admin/Content/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<link href="~/Areas/Admin/Content/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Blogpost Listesi
+        </h1>   
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Adı</th>
+                                    <th>Kategori Adı</th>
+                                    <th>Açıklama</th>
+                                    <th>İşlem</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+    {
+                            <tr id="a_@item.Id">
+                                <td>@item.Id</td>                              
+                                <td>@item.Title</td> 
+                                <td>@item.CategoryName</td>
+                                <td>@item.Content</td>
+                                @*glyphicon çalışmıyor*@
+                                <td><span class="glyphicon glyphicon-trash" onclick="Delete(@item.Id)"></span></td>
+                            </tr>
+}
+
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Adı</th>
+                                    <th>Kategori Adı</th>
+                                    <th>Açıklama</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<script>
+
+    function Delete(id) {
+        $.ajax({
+            url: "/Admin/BlogPost/DeleteBlogPost/" + id,
+            data: id,
+            type: "POST",
+            success: function (result) {
+                $("#a_" + id).fadeOut();
+            }
+        })
+    }
+
+</script>
+
+<script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+</script>

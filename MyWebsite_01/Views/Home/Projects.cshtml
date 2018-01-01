@@ -1,0 +1,91 @@
+﻿@using MyWebsite_01.Models.ORM.VM
+@model FrontBlogPostVM
+
+
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Resume</title>
+    <style>
+        .your-img {
+            height: auto;
+            width: auto;
+            max-width: 350px;
+            max-height: 350px;
+        }
+
+        .btn-circle {
+            width: 130px;
+            height: 130px;
+            text-align: center;
+            padding: 53px 0;
+            font-size: 15px;
+            line-height: 1.428571429;
+            border-radius: 50%;
+        }
+
+        .btn-fontsizeHello {
+            font-size: 75px;
+            font-family: Helvetica;
+            color: #8b8b8b;
+        }
+
+        .btn-fontsize {
+            font-size: 45px;
+            font-family: Helvetica;
+            color: #8b8b8b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="background-color:#eae5e5">
+        <div class="container">
+
+            <br /><br /><br />
+            <div class="row">
+                <span class="btn-fontsize col-md-offset-1">PROJECTS</span>
+                <hr />
+            </div>
+
+            <div class="col-md-9">
+
+                @foreach (var item in Model.Categories)
+                {
+                    if (item.Name == "Projects")
+                    {
+                        <div class="panel panel-info">
+                            <div class="panel panel-heading">@item.Name</div>
+                            @foreach (var post in Model.BlogPosts)
+                            {
+
+                                if (post.CategoryId == item.Id)
+                                {
+                                    <div class="panel panel-body">@post.Title</div>
+                                }
+
+
+                            }
+                        </div>
+                    }
+                 
+                }
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    
+    
+</body>
+</html>
